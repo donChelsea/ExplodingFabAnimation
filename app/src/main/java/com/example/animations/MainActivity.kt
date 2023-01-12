@@ -1,5 +1,6 @@
 package com.example.animations
 
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -23,6 +24,8 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.apply {
+            recyclerview.adapter = ColorAdapter(colors)
+
             fab.setOnClickListener {
                 fab.visibility = View.INVISIBLE
                 circle.visibility = View.VISIBLE
@@ -33,5 +36,17 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }
+    }
+
+    companion object {
+        val colors = listOf(
+            Color.BLUE,
+            Color.RED,
+            Color.YELLOW,
+            Color.GREEN,
+            Color.CYAN,
+            Color.MAGENTA,
+            Color.DKGRAY,
+        )
     }
 }
